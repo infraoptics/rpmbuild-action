@@ -9,15 +9,9 @@ inputs:
     required: false
     default: centos-8
 
-job:
-  build_rpm:
-    strategy:
-      matrix:
-        distrubution-os: ['centos-7']
-    steps:
-      - name: run container
-        uses: addnab/docker-run-action@v3
-        image: 'docker://robertdebock/github-action-rpmbuild:${{ matrix.distribution-os }}'
+runs:
+  using: docker
+  image: docker://robertdebock/github-action-rpmbuild:centos-7
 
 branding:
   icon: box
