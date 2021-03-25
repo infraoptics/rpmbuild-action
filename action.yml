@@ -13,7 +13,7 @@ job:
   steps:
     - name: run container
       uses: addnab/docker-run-action@v3
-      image: 'docker://robertdebock/github-action-rpmbuild:${{ inputs.distribution }}'
+      image: 'docker://robertdebock/github-action-rpmbuild:${{ env.INPUT_DISTRIBUTION }}'
 
 branding:
   icon: box
